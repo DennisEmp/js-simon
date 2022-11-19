@@ -4,6 +4,7 @@
 
 const btnstart = document.getElementById("start");
 const RandNum = document.getElementById("numbers");
+let invia = document.getElementById("btn-invia");
 
 
 function ArrNumbRandom(min, max) {
@@ -32,19 +33,47 @@ btnstart.addEventListener("click",
         RandNum.innerHTML += `<div>${ArrNumber}</div>`
         setTimeout(() => {
             const box = document.getElementById('numbers');
-          
-            // 👇️ removes element from DOM
             box.style.display = 'none';
-          
-            // 👇️ hides element (still takes up space on page)
-            // box.style.visibility = 'hidden';
-          }, 3000); // 👈️ time in milliseconds
+
+
+            let inputBox = document.getElementById("input-box").style.display = "block";
+          }, 1000); // 👈️ time in milliseconds
+
+    // collegare gli input al bottone
+
+    // dichiaro gli imput
+
+
+    invia.addEventListener("click",
+        function(){
+
+            let input1 = parseInt(document.getElementById("input1").value)
+            let input2 = parseInt(document.getElementById("input2").value)
+            let input3 = parseInt(document.getElementById("input3").value)
+            let input4 = parseInt(document.getElementById("input4").value)
+            let input5 = parseInt(document.getElementById("input5").value)
+
+            let arrayUtente = [input1,input2,input3,input4,input5];
+            console.log(arrayUtente)
+
+
+    // controllare se i due array combacino elemento per elemnto (.lenght)
+
+    let numeriInComune = ArrNumber.filter(x => arrayUtente.includes(x));
+    console.log(numeriInComune)
+    
+    if (numeriInComune.length === 5) {
+        
+        document.getElementById("risultato").innerHTML = `Hai Vinto indovinando tutti e 5 i numeri!!!`
+
+    } else {
+
+        document.getElementById("risultato").innerHTML = `hai indovinato solo ${numeriInComune.length} numeri. Questi sono i numeri che hai indovinato ${numeriInComune}. Purtroppo non sei riuscito a battere Simon, Riprova`
     }
 
-    
-    
+    }
 
+    );
+    }
 );
-
-
 

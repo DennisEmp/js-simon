@@ -9,7 +9,7 @@ header {
 }
 
 main {
-    width: 60vw;
+    width: 80vw;
     background-color: darkgray;
     color: white;
     display: flex;
@@ -33,6 +33,37 @@ main {
 
 #numbers {
     font-size: 35px;
-    margin-top: 30px;
+    margin: 30px 0;
     letter-spacing: 3px;
+}
+
+.input {
+    width: 60vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.btn-invia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#risultato {
+    font-size: 20px;
+    margin: 0 auto;
 }
